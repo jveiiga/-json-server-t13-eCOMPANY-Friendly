@@ -292,89 +292,27 @@ Com essa resposta, vemos que temos duas informações, o userId e o token respec
 }
 ```
 
-1. O campo - "status" deve receber respectivamente os 2 tipo:
-   - "Disponível"
-   - "Coletado"
-```
-
-Você pode apenas dar update em quanto você avançou nas tecnologias que já está no seu perfil. Utilizando este endpoint:
-
-`PUT /users/techs/:tech_id - FORMATO DA REQUISIÇÃO`
-
-```json
-{
-  "status": "Avançado"
-}
-```
-
 Também é possível deletar uma tecnologia, utilizando este endpoint:
 
-`DELETE /users/techs/:tech_id`
+`DELETE /users/products/id`
 
 ```
 Não é necessário um corpo da requisição.
 ```
 
-<h2 align ='center'> Criar trabalhos para o seu perfil </h2>
+<h2 align ='center'> Atualizando publicações do perfil </h2>
 
-Da mesma forma de criar tecnologias, conseguimos criar trabalhos, dessa forma:
-
-`POST /users/works - FORMATO DA REQUISIÇÃO`
-
-```json
-{
-  "title": "KenzieHub",
-  "description": "I was the backend developer of this project, and i did it using Typescript and NodeJS",
-  "deploy_url": "https://kenziehub.me"
-}
-```
-
-Conseguimos atualizar o titulo, a descrição ou o deploy_url, qualquer uma das informações do respectivo trabalho.
-Utilizando este endpoint:
-
-`PUT /users/works/:work_id - FORMATO DA REQUISIÇÃO`
-
-```json
-{
-  "title": "KenzieHub Atualizado",
-  "description": "Nova descrição."
-}
-```
-
-Também é possível deletar um trabalho do seu perfil, utilizando este endpoint:
-
-`DELETE /users/works/:work_id`
-
-```
-Não é necessário um corpo da requisição.
-```
-
-<h2 align ='center'> Atualizando os dados do perfil </h2>
-
-Assim como os endpoints de tecnologias e trabalhos, nesse precisamos estar logados, com o token no cabeçalho da requisição. Estes endpoints são para atualizar seus dados como, foto de perfil, nome, ou qualquer outra informação em relação ao que foi utilizado na criação do usuário.
+Estes endpoints devem ser usados com o token no cabeçalho da requisição e, são para atualizar seus dados como, foto da publicação, nome, ou qualquer outra informação em relação ao que foi utilizado na criação da publicação do descarte.
 
 Endpoint para atualizar a foto de perfil:
 
-`PATCH /users/avatar - FORMATO DA REQUISIÇÃO`
+`PATCH /users/products/id - FORMATO DA REQUISIÇÃO`
 
 ```multipart
-avatar: <Arquivo de imagem>
-```
-
-Nesse endpoint podemos atualizar qualquer dado do usuário, e a senha também, porém é necessário enviar a antiga senha no campo "old_password" caso o usuário queira atualizar a senha.
-
-`PUT /profile - FORMATO DA REQUISIÇÃO`
-
-```json
-{
-  "name": "Gabriel Araujo",
-  "contact": "linkedin/araujooj",
-  "old_password": "123456",
-  "password": "123456789"
-}
+image: <Arquivo de imagem>
 ```
 
 ---
 
-Feito com ♥ by araujooj :wave:
+Feito com ♥ by equipe eCOMPANY Friendly :wave:
 
