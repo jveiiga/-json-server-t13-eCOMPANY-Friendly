@@ -55,7 +55,11 @@ Após o usuário estar logado, ele deve conseguir visualizar os descartes public
 <h2 align ='center'> Listando usuários </h2>
 
 Nessa aplicação o usuário após fazer o login ou se cadastrar pode ver a empresa e os produtos já cadastradas na plataforma, na API podemos acessar a lista dessa forma:
-Aqui conseguimos ver a empresa, e seus produtos cadastrados.
+## Rota para ver a empresa, e seus produtos cadastrados:
+
+<p align="center">
+  <a href="#endpoints">Users</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
 
 `GET /products - FORMATO DA RESPOSTA - STATUS 200`
 
@@ -104,7 +108,7 @@ Cabeçalho da resposta:
 > page: 1 <br/>
 > perPage: 15
 
-Podemos acessar um usuário específico utilizando o endpoint:
+## Rota para acessar um usuário específico:
 
 `GET /users/userId - FORMATO DA RESPOSTA - STATUS 200`
 
@@ -164,6 +168,8 @@ Podemos acessar um usuário específico utilizando o endpoint:
 
 <h2 align ='center'> Criação de usuário </h2>
 
+## Rota para criação de usuário
+
 `POST /register - FORMATO DA REQUISIÇÃO`
 
 ```json
@@ -206,6 +212,9 @@ Email já cadastrado:
 
 <h2 align = "center"> Login </h2>
 
+## Rota para fazer login na aplicação"
+<h2 align = "center"> Login </h2>
+
 `POST /login - FORMATO DA REQUISIÇÃO`
 
 ```json
@@ -234,6 +243,8 @@ Caso dê tudo certo, a resposta será assim:
 Com essa resposta, vemos que temos duas informações, o userId e o token respectivo.
 
 <h2 align ='center'> Buscar Perfil do usuário logado (id) </h2>
+
+## Rota para buscar perfil:
 
 `GET /users - FORMATO DA REQUISIÇÃO`
 
@@ -277,6 +288,8 @@ Com essa resposta, vemos que temos duas informações, o userId e o token respec
 
 <h2 align ='center'> Publicar descarte disponível </h2>
 
+## Rota para publicar:
+
 `POST /products - FORMATO DA REQUISIÇÃO`
 
 ```json
@@ -292,7 +305,7 @@ Com essa resposta, vemos que temos duas informações, o userId e o token respec
 }
 ```
 
-Também é possível deletar uma tecnologia, utilizando este endpoint:
+## Rota para deletar uma tecnologia:
 
 `DELETE /users/products/id`
 
