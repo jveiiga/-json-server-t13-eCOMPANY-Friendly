@@ -165,8 +165,10 @@ Cabeçalho da resposta:
 ]
 ```
 
+##
 <h2 align ='center'> Criação de usuário </h2>
 
+##
 ## Rota para criação de usuário:
 
 `POST /register - FORMATO DA REQUISIÇÃO`
@@ -209,8 +211,10 @@ Email já cadastrado:
 }
 ```
 
+##
 <h2 align = "center"> Login </h2>
 
+##
 ## Rota para fazer login na aplicação:
 
 `POST /login - FORMATO DA REQUISIÇÃO`
@@ -240,8 +244,10 @@ Caso dê tudo certo, a resposta será assim:
 
 Com essa resposta, vemos que temos duas informações, o userId e o token respectivo.
 
+##
 <h2 align ='center'> Buscar Perfil do usuário logado (id) </h2>
 
+##
 ## Rota para buscar produtos sem o usuário:
 
 `GET /users - FORMATO DA REQUISIÇÃO`
@@ -285,6 +291,7 @@ Com essa resposta, vemos que temos duas informações, o userId e o token respec
 	}
 ```
 
+##
 ## Rota para buscar produtos pelo tipo:
 
 `GET /products - FORMATO DA REQUISIÇÃO`
@@ -315,6 +322,7 @@ Com essa resposta, vemos que temos duas informações, o userId e o token respec
 
 `GET /users/idUser/products - FORMATO DA RESPOSTA - STATUS 200`
 
+##
 <h2 align ='center'> Publicar descarte disponível </h2>
 
 ## Rota para publicar:
@@ -334,6 +342,7 @@ Com essa resposta, vemos que temos duas informações, o userId e o token respec
 }
 ```
 
+##
 ## Rota para deletar uma tecnologia:
 
 `DELETE /users/products/id`
@@ -342,6 +351,7 @@ Com essa resposta, vemos que temos duas informações, o userId e o token respec
 Não é necessário um corpo da requisição.
 ```
 
+##
 <h2 align ='center'> Atualizando publicações do perfil </h2>
 
 Estes endpoints devem ser usados com o token no cabeçalho da requisição e, são para atualizar seus dados como, foto da publicação, nome, ou qualquer outra informação em relação ao que foi utilizado na criação da publicação do descarte.
