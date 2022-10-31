@@ -8,7 +8,7 @@ Assim como a documentação do JSON-Server-Auth traz (https://www.npmjs.com/pack
 
 ### Cadastro
 
-POST /register <br/>
+POST /register(default) <br/>
 POST /signup <br/>
 POST /users
 
@@ -18,7 +18,7 @@ Você pode ficar a vontade para adicionar qualquer outra propriedade no corpo do
 
 ### Login
 
-POST /login <br/>
+POST /login(default) <br/>
 POST /signin
 
 Qualquer um desses 2 endpoints pode ser usado para realizar login com um dos usuários cadastrados na lista de "Users"
