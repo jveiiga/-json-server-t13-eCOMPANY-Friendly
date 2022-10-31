@@ -25,7 +25,7 @@ Qualquer um desses 2 endpoints pode ser usado para realizar login com um dos usu
 #json-server-t13-eCOMPANY-Friendly
 
 <h1 align="center">
-  eCOMPANY Friendly - API
+   ♻️ eCOMPANY Friendly - API ♻️
 </h1>
 
 <p align = "center">
@@ -52,65 +52,13 @@ Rotas que necessitam de autorização deve ser informado no cabeçalho da requis
 
 Após o usuário estar logado, ele deve conseguir visualizar os descartes publicados na aplicação, revindicar descarte, publicar descarte, editar e deletar publicação de descarte.
 
-<h2 align ='center'> Listando usuários </h2>
-
 Nessa aplicação o usuário após fazer o login ou se cadastrar pode ver a empresa e os produtos já cadastradas na plataforma, na API podemos acessar a lista dessa forma:
-## Rota para ver a empresa, e seus produtos cadastrados:
 
-<p align="center">
-  <a href="#endpoints">Users</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</p>
-
-`GET /products - FORMATO DA RESPOSTA - STATUS 200`
-
-```json
-[
-   {
-        "userId": 3,
-        "status": "Disponível",
-        "name": "Resíduos",
-        "type": "Metal",
-        "weight": null,
-        "city": "São Paulo",
-        "country": "São Paulo",
-        "image": null,
-        "id": 1,
-          "user": 
-          {
-          "email": "ecompany@mail.com",
-          "password": "$2a$10$9eFY2.uKjJc2LCRUimNcT.DekRbBfWC9XnWA1ZnnSnIzY9Iso45DW",
-          "name": "ECOmpany friendly",
-          "tellphone": "1195090-9009",
-          "id": 3
-          }
-    },
-]
-```
-
-Podemos utilizar os query params para mudar a lista, mudando a paginação, podemos alterar quantos usuários queremos no perPage, e alterar a página no parâmetro page. Uma requisição apenas no /users irá trazer 15 usuários na página 1.
-Com o parâmetro tech, podemos filtrar por tecnologia.
-
-`GET /users?perPage=15&page=1&tech=React - FORMATO DA RESPOSTA - STATUS 200`
-
-```json
-[
-  {
-    A páginação não está funcionando, ainda estou verificando.  
-  }
-]
-```
-
-Lembrando que no cabeçalho da resposta, temos as informações sobre a paginação, e o nextUrl para acessar a próxima página.
-
-Cabeçalho da resposta:
-
-> nextUrl: https://kenziehub.herokuapp.com/users?perPage=15&page=2 <br/>
-> page: 1 <br/>
-> perPage: 15
-
-## Rota para acessar um usuário específico:
+##
+## Rota para buscar usuário, e seus produtos cadastrados:
 
 `GET /users/userId - FORMATO DA RESPOSTA - STATUS 200`
+
 
 ```json
 {
@@ -166,9 +114,60 @@ Cabeçalho da resposta:
 }
 ```
 
+Podemos utilizar os query params para mudar a lista, mudando a paginação, podemos alterar quantos usuários queremos no perPage, e alterar a página no parâmetro page. Uma requisição apenas no /users irá trazer 15 usuários na página 1.
+Com o parâmetro tech, podemos filtrar por tecnologia.
+
+`GET /users?perPage=15&page=1&tech=React - FORMATO DA RESPOSTA - STATUS 200`
+
+```json
+[
+  {
+    A páginação não está funcionando, ainda estou verificando.  
+  }
+]
+```
+
+Lembrando que no cabeçalho da resposta, temos as informações sobre a paginação, e o nextUrl para acessar a próxima página.
+
+Cabeçalho da resposta:
+
+> nextUrl: https://kenziehub.herokuapp.com/users?perPage=15&page=2 <br/>
+> page: 1 <br/>
+> perPage: 15
+
+##
+## Rota para fazer buscas pelo município e cidade:
+
+`GET /products - FORMATO DA RESPOSTA - STATUS 200`
+
+```json
+[
+	{
+		"userId": 3,
+		"name": "Fogão",
+		"type": "Metal",
+		"weight": null,
+		"city": Minas Gerais,
+		"country": Belo Horizonte,
+		"image": null,
+		"id": 2
+	},
+	{
+		"userId": 1,
+		"name": "Fogão",
+		"type": "Metal",
+		"weight": null,
+		"city": Minas Gerais,
+		"country": Belo Horizonte,
+		"image": null,
+		"id": 3
+	}
+]
+```
+
 <h2 align ='center'> Criação de usuário </h2>
 
-## Rota para criação de usuário
+## Rota para criação de usuário:
 
 `POST /register - FORMATO DA REQUISIÇÃO`
 
@@ -212,8 +211,7 @@ Email já cadastrado:
 
 <h2 align = "center"> Login </h2>
 
-## Rota para fazer login na aplicação"
-<h2 align = "center"> Login </h2>
+## Rota para fazer login na aplicação:
 
 `POST /login - FORMATO DA REQUISIÇÃO`
 
@@ -244,7 +242,7 @@ Com essa resposta, vemos que temos duas informações, o userId e o token respec
 
 <h2 align ='center'> Buscar Perfil do usuário logado (id) </h2>
 
-## Rota para buscar perfil:
+## Rota para buscar produtos sem o usuário:
 
 `GET /users - FORMATO DA REQUISIÇÃO`
 
@@ -252,39 +250,70 @@ Com essa resposta, vemos que temos duas informações, o userId e o token respec
 
 <br>
 
-`GET /users - FORMATO DA RESPOSTA - STATUS 200`
+`GET /users/idUser/products - FORMATO DA RESPOSTA - STATUS 200`
 
 ```json
-{
-	"email": "ecompany@mail.com",
-	"password": "$2a$10$9eFY2.uKjJc2LCRUimNcT.DekRbBfWC9XnWA1ZnnSnIzY9Iso45DW",
-	"name": "ECOmpany friendly",
-	"tellphone": "1195090-9009",
-	"id": 3,
-	"products": [
-		{
-			"userId": 3,
-			"name": "Geladeira",
-			"type": "Metal",
-			"weight": null,
-			"city": "São Paulo",
-			"country": "São Paulo",
-			"image": null,
-			"id": 1
-		},
-		{
-			"userId": 3,
-			"name": "Fogão",
-			"type": "Metal",
-			"weight": null,
-			"city": "Minas Gerais",
-			"country": "Belo Horizonte",
-			"image": null,
-			"id": 2
-		}
-	]
-}
+	{
+		"userId": 3,
+		"name": "Geladeira",
+		"type": "Metal",
+		"weight": null,
+		"city": "São Paulo",
+		"country": "São Paulo",
+		"image": null,
+		"id": 1
+	},
+	{
+		"userId": 3,
+		"name": "Fogão",
+		"type": "Metal",
+		"weight": null,
+		"city": "Minas Gerais",
+		"country": "Belo Horizonte",
+		"image": null,
+		"id": 2
+	},
+	{
+		"userId": 3,
+		"name": "Material Descarte",
+		"type": "Metal",
+		"weight": null,
+		"city": "Curitba",
+		"country": "Paraná",
+		"image": "",
+		"id": 4
+	}
 ```
+
+## Rota para buscar produtos pelo tipo:
+
+`GET /products - FORMATO DA REQUISIÇÃO`
+
+```json
+	{
+		"userId": 3,
+		"name": "Material Descarte",
+		"type": "Plastico",
+		"weight": null,
+		"city": "Curitba",
+		"country": "Paraná",
+		"image": "",
+		"id": 4,
+		"user": {
+			"email": "ecompany@mail.com",
+			"password": "$2a$10$9eFY2.uKjJc2LCRUimNcT.DekRbBfWC9XnWA1ZnnSnIzY9Iso45DW",
+			"name": "ECOmpany friendly",
+			"tellphone": "1195090-9009",
+			"id": 3
+		}
+	}
+```
+
+<blockquote>Na requisição apenas é necessário o userId, a aplicação ficará responsável em buscar e retornar o usuário.</blockquote>
+
+<br>
+
+`GET /users/idUser/products - FORMATO DA RESPOSTA - STATUS 200`
 
 <h2 align ='center'> Publicar descarte disponível </h2>
 
