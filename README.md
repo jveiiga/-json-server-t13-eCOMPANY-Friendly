@@ -42,7 +42,7 @@ Este é o backend da aplicação eCOMPANY Friendly - Um grupo que é amigo das e
 
 A API tem um total de 11 endpoints - podendo cadastrar seu perfil e produtos que deseja descartar para que outras empresas possam coletar e reutilizar. <br/>
 
-O url base da API, geralmente é gerada em: http://localhost:3001/
+baseUrl da API: https://json-server-ecompany.herokuapp.com
 
 ## Essas rotas necessitam de autenticação
 
@@ -343,7 +343,7 @@ Com essa resposta, vemos que temos duas informações, o userId e o token respec
 ```
 
 ##
-## Rota para deletar uma tecnologia:
+## Rota para deletar:
 
 `DELETE /users/products/id`
 
@@ -366,5 +366,5 @@ image: <Arquivo de imagem>
 
 ---
 
-Feito com ♥ by equipe eCOMPANY Friendly :wave:
+Feito com 💚 by equipe eCOMPANY Friendly :wave:
 
