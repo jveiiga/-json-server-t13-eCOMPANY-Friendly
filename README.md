@@ -358,7 +358,7 @@ Estes endpoints devem ser usados com o token no cabeçalho da requisição e, s�
 
 Endpoint para atualizar a foto de perfil:
 
-`PATCH /users/products/id - FORMATO DA REQUISIÇÃO`
+`PATCH /products/id - FORMATO DA REQUISIÇÃO`
 
 ```multipart
 image: <Arquivo de imagem>
